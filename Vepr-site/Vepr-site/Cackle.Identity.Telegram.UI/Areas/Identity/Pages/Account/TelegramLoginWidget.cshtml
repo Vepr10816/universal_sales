@@ -1,0 +1,50 @@
+﻿@using Cackle.Identity.Telegram.UI
+@model Cackle.Identity.Telegram.UI.Areas.Identity.Pages.Account.TelegramLoginWidgetModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<script async="@true"
+        src="https://telegram.org/js/telegram-widget.js?15"
+        data-telegram-login="@Model.BotUserName"
+        data-size="@Model.ButtonStyle"
+        @{
+            if (!Model.ShowUserPhoto)
+            {
+                <text> data-userpic="false" </text>
+            }
+        }
+        @{
+            if (Model.CornerRadius != -1)
+            {
+                <text> data-radius="@Model.CornerRadius" </text>
+            }
+        }
+        @{
+            if (string.IsNullOrEmpty(Model.RedirectUrl))
+            {
+                <text> data-onauth="onTelegramAuth(user, origin)" </text>
+            }
+        }
+        @{
+            if (string.IsNullOrEmpty(Model.RedirectUrl))
+            {
+                <text> @Model.RedirectUrl </text>
+            }
+        }
+        @{
+            if (Model.SendMessageAccess)
+            {
+                <text> data-request-access="write" </text>
+            }
+        }></script>
+<form method="post" id="telegramLogin" action="@Model.CallbackPath">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="@TelegramLoginWidgetConstants.UserDataField" id="userData"/>
+    <input type="hidden" name="@TelegramLoginWidgetConstants.OriginField" id="origin"/>
+</form>
+<script type="text/javascript">
+    function onTelegramAuth(user, origin) {
+        document.getElementById("userData").value = btoa(JSON.stringify(user));
+        document.getElementById("origin").value = origin;
+        document.getElementById("telegramLogin").submit();
+    }
+</script>

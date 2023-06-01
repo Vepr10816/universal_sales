@@ -1,0 +1,333 @@
+﻿@*@using (Html.BeginForm())
+    {
+        for (var i = 0; i < Model.Count(); i++)
+        {
+            <table>
+                <tr>
+                    <td>
+                        @Html.HiddenFor(it => it[i].id)
+                        @Html.HiddenFor(it => it[i].category_name)
+                        @Html.DisplayFor(it => it[i].category_name)
+                    </td>
+                    <td>
+                        @Html.RadioButtonFor(it => it[i].isSelected, new { Style = "vertical-align:3px}" })
+                    </td>
+                </tr>
+            </table>
+        }
+        <input id="Submit1" type="submit" value="submit" />
+    }*@
+
+@*<form method="post">
+
+        <input name="color" type="radio" value="red" />
+        <span>красный</span> <br />
+        <input name="color" type="radio" value="blue" />
+        <span>синий</span> <br />
+        <input checked="checked" name="color" type="radio" value="green" />
+        <span>зеленый</span>
+
+
+        <input name="color2" type="radio" value="red" />
+        <span>красный</span> <br />
+        <input name="color2" type="radio" value="blue" />
+        <span>синий</span> <br />
+        <input checked="checked" name="color2" type="radio" value="green" />
+        <span>зеленый</span>
+        <p>
+            <input type="submit" value="Отправить" />
+        </p>
+    </form>*@
+
+@*@model Vepr_site.Models.Evaluation
+    <h2>Quiz 24</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.EditorFor(x => x.Questions)
+        <p><input type="text" name="b" placeholder="Введите имя" size="18" /></p>
+        <input type="submit" />
+    }*@
+
+
+@model Person
+@*<h1>Enter data:</h1>
+    <form asp-action="Index" method="post">
+        <label>First Name:</label>
+        <input type="text" asp-for="Name" />
+
+        <label>Last Name:</label>
+        <input type="text" asp-for="Surname" />
+
+        <button type="submit">Save</button>
+    </form>*@
+
+@*<link rel="stylesheet" href="~/css/MyStyle.css" />
+<style>
+    p:hover {
+        cursor: pointer;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        z-index: 999;
+        overflow-x: hidden;
+        transition: width 0.5s;
+        background-color: white;
+    }
+
+    .container {
+        all: unset;
+    }
+
+    .sidebar-toggle {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        cursor: pointer;
+    }
+
+        .sidebar-toggle span {
+            display: block;
+            height: 2px;
+            width: 25px;
+            margin-bottom: 5px;
+            background-color: black;
+        }
+
+    .sidebar-content {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: calc(100vw / 3);
+        padding: 20px;
+    }
+
+    .sidebar:hover {
+        width: calc(100vw / 3);
+    }
+
+        .sidebar:hover ~ .overlay {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: opacity 0.5s ease-in-out;
+        z-index: 998;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .no-wrap {
+        white-space: nowrap;
+    }
+
+    .highText:hover {
+        color: red;
+        cursor: pointer;
+    }
+
+    #accessories,
+    #basicClothes,
+    #clothes,
+    #homeClothes,
+    #shoes,
+    #sportClothes,
+    #upClothes {
+        display: none;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 1vh;
+        font-size: 2vh;
+    }
+
+        a:hover {
+            text-decoration: none;
+            color: black;
+        }
+</style>
+
+@{
+    @inject IHttpContextAccessor HttpContextAccessor
+    @using Microsoft.AspNetCore.Http;
+    var httpContext = HttpContextAccessor.HttpContext;
+    List<Category> categoryList = httpContext.Session.GetObjectFromJson<List<Category>>("CategoryList");
+}
+
+
+<div class="row ">
+    <div id="sidebar-toggle" class="sidebar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+
+<div class="row no-wrap">
+
+    <div class="col-6 ml-1 sidebar-content">
+        @{
+            foreach (var category in categoryList)
+            {
+                <p class="categoryText" id="@category.ID">@category.CategoryName</p>
+            }
+        }
+    </div>
+    @{
+        if (categoryList != null || categoryList.Count != 0)
+        {
+            <div class="col-5" style="margin-top:15vh">
+                @{
+                    foreach (var category in categoryList)
+                    {
+                        <div id="@category.ID" style="display: none" class="Subcategory">
+                            @{
+                                foreach (var subcategory in category.SubcategoryList)
+                                {
+                                    <a name="idSubcategory" asp-action="RedirectToProduct" asp-controller="Subcategory" asp-route-idSubcategory="@subcategory.ID">@subcategory.SubcategoryName</a>
+                                }
+                            }
+                        </div>
+                    }
+                }
+            </div>
+        }
+    }
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $('.categoryText').on('click', function () {
+        $('.Subcategory').each(function () {
+            $(this).css('display', 'none');
+        });
+        var categoryID = $(this).attr('id');
+        $('.Subcategory').each(function () {
+            var subcategoryID = $(this).attr('id');
+            if (subcategoryID == categoryID) {
+                $(this).css('display', 'block');
+            }
+        });
+    });
+</script>*@
+
+
+@*<div class="col-9">
+    <div class="row">
+        @foreach (var product in Model.ProductList)
+        {
+            if (product.ProductPrice > 0)
+            {
+                <div class="card col-4" style="width: 18rem;">
+                    @if (product.ProductPhotosList.Count > 0)
+                    {
+                        string pathPhoto = $@"{System.IO.Path.DirectorySeparatorChar}images{System.IO.Path.DirectorySeparatorChar}{product.ProductPhotosList[0].PhotoName}";
+                        <img src="@Url.Content(pathPhoto)" class="card-img-top" alt="image">
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title">@product.ProductName</h5>
+                        <p class="card-text">@product.Description</p>
+                        <a name="Product" class="btn btn-primary" asp-action="RedirectToSelectedProduct" asp-controller="Product" asp-route-idProduct="@product.ID">Go somewhere</a>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>*@
+
+<div class="container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" data-pause="hover">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            @for (int i = 0; i < 5; i++)
+            {
+                if (i == 0)
+                {
+                    <li data-target="#myCarousel" data-slide-to="@i" class="active"></li>
+                }
+                else
+                {
+                    <li data-target="#myCarousel" data-slide-to="@i"></li>
+                }
+            }
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            @for (int i = 0; i < 5; i++)
+            {
+                if (i == 0)
+                {
+                    <div class="item active">
+                        <div class="carousel-content">
+                            <div style="margin: 0 auto">
+                                <p>
+                                    <img alt="img" src="~/images/AgACAgIAAxkBAAJguWRRkLJf-9KLeYGYXPN0ppXPn1_IAAJXxTEb-IehSdr0JbfPsTEeAQADAgADeQADLwQ.jpg"
+                                         style="width: 100%;height: 200px" />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="item">
+                        <div class="carousel-content">
+                            <div style="margin: 0 auto;text-align:center;">
+                                <p>
+                                    <img alt="img" src="~/images/AgACAgIAAxkBAAJhu2RRkr6WctbLfRRT9ddtBy7QrIaaAAI4yDEbmRGQSg4Fq899HaiaAQADAgADeQADLwQ.jpg"
+                                         style="width: 100%;height: 200px" />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only"> Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .carousel-inner {
+            width: auto;
+            height: 200px;
+            max-height: 200px !important;
+        }
+
+        .carousel-content {
+            color: black;
+            display: flex;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.carousel').carousel();
+        });
+    </script>
+</div>

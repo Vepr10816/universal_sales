@@ -1,0 +1,75 @@
+﻿@using Vepr_site.Models
+@using System;
+@using System.IO;
+@model Product
+@{
+    ViewData["Title"] = Model.ProductName;
+    <h1>@ViewData["Title"]</h1>
+}
+
+@{
+    <h3>@Model.Description</h3>
+    <h4>@Model.ProductPrice руб</h4>
+    foreach (var photo in Model.ProductPhotosList)
+    {
+        string pathPhoto = $@"{System.IO.Path.DirectorySeparatorChar}images{System.IO.Path.DirectorySeparatorChar}{photo.PhotoName}";
+        <img src="@Url.Content(pathPhoto)" alt="Image" />
+    }
+
+    string characteristicName = "";
+    string strForCharacteristicProduct = "";
+    if (Model.ProductCharacteristicsList.Count != 0)
+    {
+        foreach (var characteristic in Model.ProductCharacteristicsList)
+        {
+            if (characteristic.Characteristics.Selectable == true && Model.ProductCharacteristicsList.Count(x => x.Characteristics.ID == characteristic.Characteristics.ID) > 1)
+            {
+                @*if (characteristicName != characteristic.characteristics.characteristic_name)
+                    {
+
+                        <h5>@characteristic.characteristics.characteristic_name:</h5>
+                        foreach (var prevalue in characteristic.characteristics.preValuesList)
+                        {
+                            <p>@prevalue.pre_value</p>
+                        }
+                    }*@
+                if (characteristicName == characteristic.Characteristics.CharacteristicName)
+                {
+                    <p>@characteristic.CharacteristcValue</p>
+                }
+                else
+                {
+                    <h5>@characteristic.Characteristics.CharacteristicName:</h5>
+                    <p>@characteristic.CharacteristcValue</p>
+                }
+                <p>@strForCharacteristicProduct</p>
+
+                characteristicName = characteristic.Characteristics.CharacteristicName;
+            }
+        }
+
+        <h4>Характеристики:</h4>
+        characteristicName = "";
+        strForCharacteristicProduct = "";
+        foreach (var characteristic in Model.ProductCharacteristicsList)
+        {
+            if (characteristic.Characteristics.Selectable == false ||
+                (characteristic.Characteristics.Selectable == true &&
+                Model.ProductCharacteristicsList.Count(x => x.Characteristics.ID == characteristic.Characteristics.ID) == 1))
+                if (characteristicName == characteristic.Characteristics.CharacteristicName)
+                {
+                    strForCharacteristicProduct = $@", {characteristic.CharacteristcValue}";
+                }
+                else
+                {
+                    strForCharacteristicProduct = $@"{characteristic.Characteristics.CharacteristicName} - {characteristic.CharacteristcValue}";
+                }
+            <p>@strForCharacteristicProduct</p>
+            characteristicName = characteristic.Characteristics.CharacteristicName;
+        }
+    }
+    @* string path = $@"{System.IO.Path.DirectorySeparatorChar}SelectedProduct{System.IO.Path.DirectorySeparatorChar}Index";
+        <form method="post" action="@path">
+            <button name="idProduct" value="@product.id" type="submit">Просмотр</button>
+        </form>*@
+}

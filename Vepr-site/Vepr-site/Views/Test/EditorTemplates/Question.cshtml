@@ -1,0 +1,12 @@
+﻿@model Vepr_site.Models.Question
+<div>
+    @Html.HiddenFor(x => x.ID)
+    <h3> @Model.QuestionText </h3>
+    @foreach (var a in Model.Answers)
+    {
+        <p>
+            @Html.RadioButtonFor(b => b.SelectedAnswer, a.ID)  @a.AnswerText
+        </p>
+    }
+</div>
+

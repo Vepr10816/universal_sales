@@ -1,0 +1,65 @@
+﻿@using Vepr_site.Models
+@model List<Basket>
+@{ ViewBag.Title = "Basket"; }
+
+@{
+    double totalPrice = 0;
+    if (Model.Count == 0)
+    {
+        <h1>Корзина пуста</h1>
+    }
+}
+
+<table class="table">
+    <tr><td>Наименование товара</td><td>Характеристики</td><td>Количество</td><td>Цена</td></tr>
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        var item = Model[i];
+        <tr>
+            <td>
+                @Html.ActionLink(item.Product.ProductName, "RedirectToSelectedProduct", "Basket", new { idProduct = item.Product.ID }, null)
+            </td>
+            <td>
+                @{
+                    string characteristicString = "";
+                    foreach (var idCharacteristic in item.IDProductCharacteristicsList)
+                    {
+                        if (idCharacteristic != 0)
+                        {
+                            foreach (var characteristic in item.Product.ProductCharacteristicsList.Where(x => x.ID == idCharacteristic))
+                            {
+                                characteristicString = $@"{characteristic.Characteristics.CharacteristicName} - {characteristic.CharacteristcValue}";
+                            }
+                        }
+                    }
+                }
+                @characteristicString
+            </td>
+            <td>
+                <form method="get" action="/Basket/ChangeQuantityPlus">
+                    <button name="idBasket" value="@i" type="submit">+</button>
+                </form>
+                @item.Quantity
+                <form method="get" action="/Basket/ChangeQuantityMinus">
+                    <button name="idBasket" value="@i" type="submit">-</button>
+                </form>
+            </td>
+            <td>@item.Price руб.</td>
+            
+            <td>
+                <form method="get" action="/Basket/DeleteProduct">
+                    <button name="idBasket" value="@i" type="submit">Удалить из корзины</button>
+                </form>
+            </td>
+        </tr>
+        totalPrice += item.Price;
+    }
+</table>
+@{
+    if (Model.Count != 0)
+    {
+        <h3>Итоговая цена: @totalPrice руб.</h3>
+        <br/>
+        <a class="btn btn-primary" asp-page="/TelegramLogin">Оформить заказ</a>
+    }
+}

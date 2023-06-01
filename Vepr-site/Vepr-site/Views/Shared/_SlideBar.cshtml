@@ -1,0 +1,168 @@
+﻿<link rel="stylesheet" href="~/css/MyStyle.css" />
+<style>
+    p:hover{
+        cursor:pointer;
+    }
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        z-index: 999;
+        overflow-x: hidden;
+        transition: width 0.5s;
+        background-color: white;
+    }
+
+    .container{
+        all:unset;
+    }
+
+    .sidebar-toggle {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        cursor: pointer;
+    }
+
+        .sidebar-toggle span {
+            display: block;
+            height: 2px;
+            width: 25px;
+            margin-bottom: 5px;
+            background-color: black;
+        }
+
+    .sidebar-content {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: calc(100vw / 3);
+        padding: 20px;
+    }
+
+    .sidebar:hover {
+        width: calc(100vw / 3);
+    }
+
+        .sidebar:hover ~ .overlay {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: opacity 0.5s ease-in-out;
+        z-index: 998;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .no-wrap {
+        white-space: nowrap;
+    }
+
+    .highText:hover {
+        color: red;
+        cursor: pointer;
+    }
+
+    #accessories,
+    #basicClothes,
+    #clothes,
+    #homeClothes,
+    #shoes,
+    #sportClothes,
+    #upClothes {
+        display: none;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 1vh;
+        font-size: 2vh;
+    }
+
+        a:hover {
+            text-decoration: none;
+            color: black;
+        }
+</style>
+
+@{
+    @inject IHttpContextAccessor HttpContextAccessor
+    @using Microsoft.AspNetCore.Http;
+    var httpContext = HttpContextAccessor.HttpContext;
+    List<Category> categoryList = httpContext.Session.GetObjectFromJson<List<Category>>("CategoryList");
+}
+
+<div class="sidebar">
+
+    <div class="row ">
+        <div id="sidebar-toggle" class="sidebar-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+
+    <div class="row no-wrap">
+
+        <div class="col-6 ml-1 sidebar-content">
+            @{ 
+                foreach(var category in categoryList)
+                {
+                    <p class="categoryText" id="@category.ID">@category.CategoryName</p>
+                }
+            }
+        </div>
+        @{ 
+            if(categoryList!=null || categoryList.Count != 0)
+            {
+                <div class="col-5" style="margin-top:15vh">
+                    @{ 
+                        foreach(var category in categoryList)
+                        {
+                            <div id="@category.ID" style="display: none" class="Subcategory">
+                                @{ 
+                                    foreach (var subcategory in category.SubcategoryList)
+                                    {
+                                        <a name="idSubcategory" asp-action="RedirectToProduct" asp-controller="Subcategory" asp-route-idSubcategory="@subcategory.ID">@subcategory.SubcategoryName</a>
+                                    }
+                                }
+                            </div>
+                        }
+                    }
+                </div>
+            }
+        }
+    </div>
+
+</div>
+<div id="overlay" class="overlay"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $('.categoryText').on('click', function () {
+        $('.Subcategory').each(function () {
+            $(this).css('display', 'none');
+        });
+        var categoryID = $(this).attr('id');
+        $('.Subcategory').each(function () {
+            var subcategoryID = $(this).attr('id');
+            if (subcategoryID.includes(categoryID)) {
+                $(this).css('display', 'block');
+            }
+        });
+    });
+</script>

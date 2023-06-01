@@ -1,0 +1,18 @@
+﻿@using Vepr_site.Models
+@model List<Subcategory>
+@{
+    ViewData["Title"] = ViewBag.CategoryName;
+}
+<h1>@ViewData["Title"]</h1>
+
+
+@{ 
+    //string path = $@"{System.IO.Path.DirectorySeparatorChar}Product{System.IO.Path.DirectorySeparatorChar}Index";
+    foreach (var subcategory in Model)
+    {
+        <form method="post" action="/Subcategory/RedirectToProduct">
+            <button name="idSubcategory" value="@subcategory.ID" type="submit">@subcategory.SubcategoryName</button>
+        </form>
+    }
+}
+

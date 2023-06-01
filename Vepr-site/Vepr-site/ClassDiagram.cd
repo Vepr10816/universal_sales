@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Cackle.Identity.Telegram.Internal.DictionaryStringJsonConverter">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAGAAAA=</HashCode>
+      <FileName>Cackle.Identity.Telegram\Internal\DictionaryStringJsonConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.Extensions.DependencyInjection.TelegramAuthenticationBuilder">
+    <Position X="9" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Cackle.Identity.Telegram\TelegramAuthenticationBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cackle.Identity.Telegram.TelegramAuthenticationConstants">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Cackle.Identity.Telegram.TelegramAuthenticationConstants.DataCheckKeys">
+        <TypeIdentifier>
+          <NewMemberFileName>Cackle.Identity.Telegram\TelegramAuthenticationConstants.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Cackle.Identity.Telegram.TelegramAuthenticationConstants.Claims">
+        <TypeIdentifier>
+          <NewMemberFileName>Cackle.Identity.Telegram\TelegramAuthenticationConstants.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cackle.Identity.Telegram\TelegramAuthenticationConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cackle.Identity.Telegram.TelegramAuthenticationDefaults" Collapsed="true">
+    <Position X="12.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAACAAAAAAAAIAAQAAAAgAAAAAAAAEAAAAAg=</HashCode>
+      <FileName>Cackle.Identity.Telegram\TelegramAuthenticationDefaults.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cackle.Identity.Telegram.TelegramAuthenticationHandler">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAgAAAAAYAAAAAgAAAAAQAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Cackle.Identity.Telegram\TelegramAuthenticationHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cackle.Identity.Telegram.TelegramAuthenticationOptions">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAAAIAAAACAQAAAAAAAAAAAAAAgAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Cackle.Identity.Telegram\TelegramAuthenticationOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cackle.Identity.Telegram.TelegramAuthenticationPostConfigureOptions" BaseTypeListCollapsed="true">
+    <Position X="9" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAgA=</HashCode>
+      <FileName>Cackle.Identity.Telegram\TelegramAuthenticationPostConfigureOptions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Cackle.Identity.Telegram.UI.Areas.Identity.Pages.Account.TelegramLoginModel">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAQAAAAAAAA=</HashCode>
+      <FileName>Cackle.Identity.Telegram.UI\Areas\Identity\Pages\Account\TelegramLogin.cshtml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cackle.Identity.Telegram.UI.Areas.Identity.Pages.Account.TelegramLoginWidgetModel">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAQAAgBAAAAAAACAAAAAAAAAFAAAAAg=</HashCode>
+      <FileName>Cackle.Identity.Telegram.UI\Areas\Identity\Pages\Account\TelegramLoginWidget.cshtml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cackle.Identity.Telegram.UI.TelegramLoginWidgetConstants">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cackle.Identity.Telegram.UI\TelegramLoginWidgetConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cackle.Identity.Telegram.UI.TelegramLoginWidgetDefaults">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAQAAgAAAAAAAAAAAAAAAAAAFAAAAAg=</HashCode>
+      <FileName>Cackle.Identity.Telegram.UI\TelegramLoginWidgetDefaults.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cackle.Identity.Telegram.UI.TelegramLoginWidgetOptions">
+    <Position X="10.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAQAAgAAAAAAAACAAAAAAAAAFAAAAAg=</HashCode>
+      <FileName>Cackle.Identity.Telegram.UI\TelegramLoginWidgetOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.Extensions.DependencyInjection.TelegramLoginWidgetExtensions">
+    <Position X="5.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cackle.Identity.Telegram.UI\TelegramLoginWidgetExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vepr_site.Controllers.BasketController">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAEAAACgAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\BasketController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vepr_site.Controllers.CategoryController">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAQA=</HashCode>
+      <FileName>Controllers\CategoryController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vepr_site.Controllers.HomeController">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAgAAAAAAAIAAAAYAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vepr_site.Controllers.OrderController">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\OrderController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vepr_site.Controllers.ProductController">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAIAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ProductController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vepr_site.Controllers.SelectedProductController">
+    <Position X="10.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAEAAAAA=</HashCode>
+      <FileName>Controllers\SelectedProductController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vepr_site.Controllers.SubcategoryController">
+    <Position X="4" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\SubcategoryController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vepr_site.Controllers.TestController">
+    <Position X="12.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\TestController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vepr_site.ApiRequest">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAEBAAAAAAAAACAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>ApiRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vepr_site.Program">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vepr_site.SessionExtensions">
+    <Position X="14.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>SessionExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vepr_site.Startup">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAgAAACAAAAAA=</HashCode>
+      <FileName>Startup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

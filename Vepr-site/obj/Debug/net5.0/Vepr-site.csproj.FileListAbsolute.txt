@@ -1,0 +1,5 @@
+C:\Users\kruto\OneDrive\Desktop\universal_sales\Vepr-site\obj\Debug\net5.0\Vepr-site.csprojAssemblyReference.cache
+C:\Users\kruto\OneDrive\Desktop\universal_sales\Vepr-site\obj\Debug\net5.0\Vepr-site.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kruto\OneDrive\Desktop\universal_sales\Vepr-site\obj\Debug\net5.0\Vepr-site.AssemblyInfoInputs.cache
+C:\Users\kruto\OneDrive\Desktop\universal_sales\Vepr-site\obj\Debug\net5.0\Vepr-site.AssemblyInfo.cs
+C:\Users\kruto\OneDrive\Desktop\universal_sales\Vepr-site\obj\Debug\net5.0\Vepr-site.csproj.CoreCompileInputs.cache

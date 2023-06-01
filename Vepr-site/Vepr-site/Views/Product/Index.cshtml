@@ -1,0 +1,128 @@
+﻿@using Vepr_site.Models
+@using System;
+@using System.IO;
+@model ProductWithCharacteristics
+@{
+    ViewData["Title"] = ViewBag.SubcategoryName;
+    int sb = ViewBag.IDSubcategory;
+    Product pr = new Product { Subcategory = new Subcategory { ID = sb } };
+    Model.ProductList.Add(pr);
+}
+
+@*@using (Html.BeginForm("ProductFilter", "Product", FormMethod.Post))
+{
+    if (Model.CharacteristicsFilterList != null)
+    {
+        for (int i = 0; i < Model.ProductList.Count(); i++)
+        {
+            @Html.HiddenFor(item => item.ProductList[i].Subcategory.ID)
+        }
+        for (var i = 0; i < Model.CharacteristicsFilterList.Count(); i++)
+        {
+            @Html.HiddenFor(item => item.ProductList.Count)
+            <p><b>@Model.CharacteristicsFilterList[i].CharacteristicName</b></p>
+            for (var j = 0; j < Model.CharacteristicsFilterList[i].CharacteristicValuesList.Count(); j++)
+            {
+            <table>
+                <tr>
+                    <td>
+                        @Html.HiddenFor(item => item.CharacteristicsFilterList[i].Id)
+                        @Html.HiddenFor(item => item.CharacteristicsFilterList[i].CharacteristicName)
+                        @Html.HiddenFor(item => item.CharacteristicsFilterList[i].CharacteristicValuesList[j].CharacteteristicValue)
+                        @Html.DisplayFor(item => item.CharacteristicsFilterList[i].CharacteristicValuesList[j].CharacteteristicValue)
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(item => item.CharacteristicsFilterList[i].CharacteristicValuesList[j].IsSelected, new { Style = "vertical-align:3px}" })
+                    </td>
+                </tr>
+            </table>
+            <p />
+            }
+        }
+        <input id="Submit1" type="submit" value="submit" />
+    }
+}
+
+@{
+    foreach (var product in Model.ProductList)
+    {
+        if (product.ProductPrice > 0)
+        {
+            <h1>@product.ProductName</h1>
+            <h3>@product.Description</h3>
+            <h4>@product.ProductPrice руб</h4>
+            foreach (var photo in product.ProductPhotosList)
+            {
+                string pathPhoto = $@"{System.IO.Path.DirectorySeparatorChar}images{System.IO.Path.DirectorySeparatorChar}{photo.PhotoName}";
+                <img src="@Url.Content(pathPhoto)" alt="Image" />
+            }
+            
+            <form method="post" action="/Product/RedirectToSelectedProduct">
+                <button name="idProduct" value="@product.ID" type="submit">Просмотр</button>
+            </form>
+        }
+    }
+}*@
+
+<div class="col d-flex flex-column">
+    <h1 class="text-center">@ViewData["Title"]</h1>
+    <div class="row mt-2">
+        @if (Model.CharacteristicsFilterList != null)
+        {
+            @using (Html.BeginForm("ProductFilter", "Product", FormMethod.Post, new { @class = "col-6" }))
+            {
+
+                for (int i = 0; i < Model.ProductList.Count(); i++)
+                {
+                    @Html.HiddenFor(item => item.ProductList[i].Subcategory.ID)
+                }
+                <div>
+
+                    @for (var i = 0; i < Model.CharacteristicsFilterList.Count(); i++)
+                    {
+                        <p class="font-weight-bold mt-2 text-center">@Model.CharacteristicsFilterList[i].CharacteristicName</p>
+                        for (var j = 0; j < Model.CharacteristicsFilterList[i].CharacteristicValuesList.Count(); j++)
+                        {
+                            @Html.HiddenFor(item => item.CharacteristicsFilterList[i].Id)
+                            @Html.HiddenFor(item => item.CharacteristicsFilterList[i].CharacteristicName)
+                            @Html.HiddenFor(item => item.CharacteristicsFilterList[i].CharacteristicValuesList[j].CharacteteristicValue)
+                            <div class="row" style="display: flex; align-items: center; justify-content: center;">
+                                <div class="col-3" style="display: flex; align-items: end; justify-content: end;">
+                                    @Html.CheckBoxFor(item => item.CharacteristicsFilterList[i].CharacteristicValuesList[j].IsSelected, new { Style = "hori-align:3px}" })
+                                </div>
+                                <div class="col-3" style="display: flex; align-items: start; justify-content: start;">
+                                    @Html.DisplayFor(item => item.CharacteristicsFilterList[i].CharacteristicValuesList[j].CharacteteristicValue)
+                                </div>
+                            </div>
+                        }
+                    }
+
+                    <div class="row" style="display: flex; align-items: center; justify-content: center;">
+                        <input class="btn btn-primary mt-2" id="Submit1" type="submit" value="Поиск" />
+                    </div>
+
+                </div>
+            }
+        }
+        <div class="col-6">
+                @foreach (var product in Model.ProductList)
+                {
+                    if (product.ProductPrice > 0)
+                    {
+                        <div class="card mb-2" style="width: 18rem;">
+                            @if (product.ProductPhotosList.Count > 0)
+                            {
+                                string pathPhoto = $@"{System.IO.Path.DirectorySeparatorChar}images{System.IO.Path.DirectorySeparatorChar}{product.ProductPhotosList[0].PhotoName}";
+                                <img src="@Url.Content(pathPhoto)" class="card-img-top" alt="image">
+                            }
+                            <div class="card-body">
+                                <h5 class="card-title">@product.ProductName</h5>
+                                <p class="card-text">@product.Description</p>
+                                <a name="Product" class="btn btn-primary" asp-action="RedirectToSelectedProduct" asp-controller="Product" asp-route-idProduct="@product.ID">Подробнее</a>
+                            </div>
+                        </div>
+                    }
+                }
+        </div>
+    </div>
+</div>

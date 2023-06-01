@@ -1,0 +1,84 @@
+﻿@using Vepr_site.Models
+@model Company
+
+
+
+@*@{
+    <h1>@Model.MyCompany.CompanyName</h1>
+    <h2>@Model.MyCompany.Description</h2>
+    string pathPhoto = $@"{System.IO.Path.DirectorySeparatorChar}images{System.IO.Path.DirectorySeparatorChar}{Model.MyCompany.UrlLogo}.jpg";
+    <img src="@Url.Content(pathPhoto)" alt="Image" />
+    <h3>Адреса:</h3>
+    foreach(var address in Model.Addresses)
+    {
+        <h4>@address.AddressName</h4>
+    }
+    <h3>Реквизиты:</h3>
+    foreach(var requisite in Model.Requisites)
+    {
+        <h4>@requisite.RequisitesName - @requisite.RequisitesValue</h4>
+    }
+
+}*@
+@*<table class="table" align="center">
+    <tr>
+        <td align="center"/>
+        <td align="center"><h1>@Model.MyCompany.CompanyName</h1></td>
+        <td align="center"/>
+    </tr>
+    <tr>
+        <td align="center" />
+        @{ string pathPhoto = $@"{System.IO.Path.DirectorySeparatorChar}images{System.IO.Path.DirectorySeparatorChar}{Model.MyCompany.UrlLogo}.jpg";}
+        <td align="center"><img width="500" height="500" src="@Url.Content(pathPhoto)" alt="Image" /></td>
+        <td align="center" />
+    </tr>
+    <tr>
+        <td align="center" />
+        <td align="center">@Model.MyCompany.Description</td>
+        <td align="center" />
+    </tr>
+    <tr>
+        <td align="center"><h3>Адреса</h3></td> <td align="center"/> <td align="center"><h3>Реквизиты</h3></td>
+    </tr>
+    <tr>
+        <td align="center">
+            @foreach (var address in Model.Addresses)
+            {
+                @address.AddressName
+                <br />
+            }
+        </td>
+        <td align="center" />
+        <td align="center">
+            @foreach (var requisite in Model.Requisites)
+            {
+                @requisite.RequisitesName @requisite.RequisitesValue
+                <br />
+            }
+        </td>
+    </tr>
+</table>*@
+<div class="col d-flex flex-column">
+    <h1 class="text-center">@Model.MyCompany.CompanyName</h1>
+    <div class="col m-0 p-0 d-flex flex-column" style=" object-fit: cover; width:100%">
+        @{ string pathPhoto = $@"{System.IO.Path.DirectorySeparatorChar}images{System.IO.Path.DirectorySeparatorChar}{Model.MyCompany.UrlLogo}.jpg";}
+        <img class="m-auto" style="width:50%; height:100%; object-fit: cover;" src="@pathPhoto">
+        <p class="mt-2 text-center">@Model.MyCompany.Description</p>
+    </div>
+    <div class="row mt-2">
+        <div class="col-6">
+            <h3 class="text-center">Адреса</h3>
+            @foreach (var address in Model.Addresses)
+            {
+                <p class="mt-1 text-center">@address.AddressName</p>        
+            }
+        </div>
+        <div class="col-6">
+            <h3 class="text-center">Реквизиты</h3>
+            @foreach (var requisite in Model.Requisites)
+            {
+                <p class="mt-1 text-center">@requisite.RequisitesName: @requisite.RequisitesValue</p>           
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+﻿@page
+@model Cackle.Identity.Telegram.UI.Areas.Identity.Pages.Account.TelegramLoginModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div style="align-items: center; display: flex; justify-content: center; min-height: 75vh;">
+    <div style="width: 128px;">
+        <img src="/telegramLogin/t_logo_2x.png" alt="Telegram Logo" width="128" height="128"/>
+        <img src="/telegramLogin/Telegram_1x.png" alt="Telegram Header" width="128" height="36" style="margin: 18px auto;">
+    </div>
+    <div style="border-left: 5px solid #179cde; margin: 50px; padding: 25px;">
+        <partial name="TelegramLoginWidget" model="@Model.WidgetModel"/>
+    </div>
+</div>

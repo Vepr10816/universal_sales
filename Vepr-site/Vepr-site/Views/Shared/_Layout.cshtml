@@ -1,0 +1,141 @@
+﻿
+
+
+@{
+    @inject IHttpContextAccessor HttpContextAccessor
+    @using Microsoft.AspNetCore.Http;
+    var httpContext = HttpContextAccessor.HttpContext;
+    List<Category> categoryList = httpContext.Session.GetObjectFromJson<List<Category>>("CategoryList");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0" />*@
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>@ViewData["Title"] - Vepr_site</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/sidebar.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Vepr_site</a>
+                    <ul class="navbar-nav flex-grow-1">
+                        @*<li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Исполнитель</a>
+                        </li>
+                        @*<li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Категории</a>
+                        </li>*@
+                        @*<li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Test" asp-action="Index">Test</a>
+                        </li>*@
+                        @{
+                            string basket = "Корзина";
+                            int basketCount = httpContext.Session.GetObjectFromJson<int>("BasketCount");
+                            if (basketCount > 0)
+                                basket += $@"({basketCount})";
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Basket" asp-action="Index">@basket</a>
+                        </li>
+                        <li class="sidebar">
+                            <div class="row ">
+                                <div id="sidebar-toggle" class="sidebar-toggle">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+
+                            <div class="row no-wrap">
+
+                                <div class="col-6 ml-1 sidebar-content">
+                                    @{
+                                        foreach (var category in categoryList)
+                                        {
+                                            <p class="categoryText" id="@category.ID">@category.CategoryName</p>
+                                        }
+                                    }
+                                </div>
+                                @{
+                                    if (categoryList != null || categoryList.Count != 0)
+                                    {
+                                        <div class="col-5" style="margin-top:15vh">
+                                            @{
+                                                foreach (var category in categoryList)
+                                                {
+                                                    <div id="@category.ID" style="display: none" class="Subcategory">
+                                                        @{
+                                                            foreach (var subcategory in category.SubcategoryList)
+                                                            {
+                                                                <a name="subcategory" asp-action="RedirectToProduct" asp-controller="Subcategory" asp-route-idSubcategory="@subcategory.ID">@subcategory.SubcategoryName</a>
+                                                            }
+                                                        }
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                    }
+                                }
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('.categoryText').on('click', function () {
+            $('.Subcategory').each(function () {
+                $(this).css('display', 'none');
+            });
+            var categoryID = $(this).attr('id');
+            $('.Subcategory').each(function () {
+                var subcategoryID = $(this).attr('id');
+                if (subcategoryID == categoryID) {
+                    $(this).css('display', 'block');
+                }
+            });
+        });
+    </script>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 МПТ:
+            <a class="text-dark" href="https://web.telegram.org/a/#5174124946">Vepr-bot.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
