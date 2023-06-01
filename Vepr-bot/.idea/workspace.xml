@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a14cb94c-9712-4444-b6dd-773d2fa54f06" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/const.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/const.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/initialize.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/initialize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/keyboards.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/keyboards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/roles.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/roles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/validate_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/validate_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/api_requests.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/api_requests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/admins/add.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/admins/category.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admins/category.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/states/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/states/form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/notify_admins.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/notify_admins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/set_bot_commands.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/set_bot_commands.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/.vs/Vepr-site/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/.vs/Vepr-site/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/.vs/Vepr-site/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/.vs/Vepr-site/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/ApiRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/ApiRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/Controllers/BasketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/Controllers/BasketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/Controllers/OrderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/Controllers/ProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/Controllers/ProductController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/Controllers/SelectedProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/Controllers/SelectedProductController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/bin/Debug/net5.0/Vepr-site.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/bin/Debug/net5.0/Vepr-site.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/bin/Debug/net5.0/Vepr-site.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/bin/Debug/net5.0/Vepr-site.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/bin/Debug/net5.0/Vepr-site.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/bin/Debug/net5.0/Vepr-site.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/bin/Debug/net5.0/Vepr-site.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/bin/Debug/net5.0/Vepr-site.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/obj/Debug/net5.0/Vepr-site.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/obj/Debug/net5.0/Vepr-site.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/obj/Debug/net5.0/Vepr-site.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/obj/Debug/net5.0/Vepr-site.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/obj/Debug/net5.0/Vepr-site.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/obj/Debug/net5.0/Vepr-site.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/obj/Debug/net5.0/Vepr-site.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/obj/Debug/net5.0/Vepr-site.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vepr-site/Vepr-site/obj/Debug/net5.0/Vepr-site.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Vepr-site/Vepr-site/obj/Debug/net5.0/Vepr-site.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/bin/vepr_backend.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/bin/vepr_backend.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_addresses_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_addresses_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_category_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_category_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_category_from_user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_category_from_user.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_order_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_order_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_product_characteristics_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_product_characteristics_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_product_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_product_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_requisites_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_all_requisites_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_company_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_company_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_order_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_order_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_order_status_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_order_status_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_product_characteristics_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_product_characteristics_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_requisites_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_requisites_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_selectable_characteristics_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/controllers/app_selectable_characteristics_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/model/my_copany.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/model/my_copany.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/model/order_contents.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/model/order_contents.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/model/order_status.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/model/order_status.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/model/product_charateristics.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/model/product_charateristics.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/model/selected_product.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/model/selected_product.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/model/selected_product_characteristics.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/model/selected_product_characteristics.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/model/status.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/model/status.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/model/user_company.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/model/user_company.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/utils/app_response.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/utils/app_response.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/utils/app_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/utils/app_utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/lib/vepr_backend.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../vepr_backend/lib/vepr_backend.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vepr_backend/test/vepr_backend_test.dart" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2LRfTygTDBwOtizuxtFIH5lvoxY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kruto/OneDrive/Desktop/universal_sales/Vepr-bot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kruto\OneDrive\Documents\Python\Vepr-bot\src\documents" />
+      <recent name="C:\Users\kruto\OneDrive\Documents\Python\Vepr-bot\data" />
+      <recent name="C:\Users\kruto\OneDrive\Documents\Python\Vepr-bot\core" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kruto\OneDrive\Documents\Python\Vepr-bot\src\images" />
+      <recent name="C:\Users\kruto\OneDrive\Documents\Python\Vepr-bot\handlers" />
+      <recent name="C:\Users\kruto\OneDrive\Documents\Python\Vepr-bot\handlers\users" />
+      <recent name="C:\Users\kruto\OneDrive\Documents\Python\Vepr-bot" />
+      <recent name="C:\Users\kruto\OneDrive\Documents\Python\Vepr-bot\handlers\admins" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="test_aio_dialog" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Vepr-bot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\kruto\OneDrive\Documents\Python\Vepr-bot\test_aio_dialog.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a14cb94c-9712-4444-b6dd-773d2fa54f06" name="Changes" comment="" />
+      <created>1675838827971</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675838827971</updated>
+      <workItem from="1675838851586" duration="4612000" />
+      <workItem from="1675854376159" duration="1870000" />
+      <workItem from="1676014082536" duration="193000" />
+      <workItem from="1676912838687" duration="58000" />
+      <workItem from="1676913187881" duration="3449000" />
+      <workItem from="1677097574766" duration="12032000" />
+      <workItem from="1677493713804" duration="10856000" />
+      <workItem from="1677827935186" duration="8405000" />
+      <workItem from="1677844125803" duration="1836000" />
+      <workItem from="1677928575544" duration="18722000" />
+      <workItem from="1677967963235" duration="8325000" />
+      <workItem from="1678091572089" duration="1747000" />
+      <workItem from="1678100924958" duration="12616000" />
+      <workItem from="1678178811196" duration="16843000" />
+      <workItem from="1678227830268" duration="12782000" />
+      <workItem from="1678300721062" duration="10856000" />
+      <workItem from="1678353402443" duration="20914000" />
+      <workItem from="1678432297031" duration="5685000" />
+      <workItem from="1678445867488" duration="254000" />
+      <workItem from="1678488312485" duration="2031000" />
+      <workItem from="1678711008929" duration="4234000" />
+      <workItem from="1678778028273" duration="4677000" />
+      <workItem from="1678956789254" duration="13421000" />
+      <workItem from="1679057515830" duration="2342000" />
+      <workItem from="1679141594930" duration="10092000" />
+      <workItem from="1679241234116" duration="2439000" />
+      <workItem from="1679243763268" duration="15815000" />
+      <workItem from="1679263912597" duration="2082000" />
+      <workItem from="1679301146545" duration="17771000" />
+      <workItem from="1679463914101" duration="4000000" />
+      <workItem from="1679559310072" duration="14409000" />
+      <workItem from="1679578547057" duration="1343000" />
+      <workItem from="1679580017142" duration="23214000" />
+      <workItem from="1679659193259" duration="897000" />
+      <workItem from="1679833143347" duration="1271000" />
+      <workItem from="1679908129210" duration="32527000" />
+      <workItem from="1679987774412" duration="10571000" />
+      <workItem from="1680166117432" duration="33250000" />
+      <workItem from="1680373187909" duration="18054000" />
+      <workItem from="1680467242001" duration="10506000" />
+      <workItem from="1680507289446" duration="23384000" />
+      <workItem from="1680773793611" duration="29722000" />
+      <workItem from="1680847182547" duration="803000" />
+      <workItem from="1680954068480" duration="1886000" />
+      <workItem from="1680983727665" duration="664000" />
+      <workItem from="1681037723315" duration="4955000" />
+      <workItem from="1681043075403" duration="8415000" />
+      <workItem from="1681121926530" duration="4672000" />
+      <workItem from="1681142307919" duration="5776000" />
+      <workItem from="1681168162548" duration="1170000" />
+      <workItem from="1681170439232" duration="77000" />
+      <workItem from="1681173662954" duration="536000" />
+      <workItem from="1681220473490" duration="598000" />
+      <workItem from="1681238713525" duration="10113000" />
+      <workItem from="1681257141550" duration="76000" />
+      <workItem from="1681257222197" duration="4092000" />
+      <workItem from="1681299433862" duration="10845000" />
+      <workItem from="1681327560465" duration="2092000" />
+      <workItem from="1681382642249" duration="3711000" />
+      <workItem from="1681560646811" duration="314000" />
+      <workItem from="1681561121151" duration="483000" />
+      <workItem from="1681721086548" duration="1802000" />
+      <workItem from="1682284117397" duration="669000" />
+      <workItem from="1683058533684" duration="10636000" />
+      <workItem from="1683113002041" duration="878000" />
+      <workItem from="1683191422631" duration="9281000" />
+      <workItem from="1683280531571" duration="1237000" />
+      <workItem from="1683298462545" duration="3783000" />
+      <workItem from="1683394664586" duration="678000" />
+      <workItem from="1683397885388" duration="9515000" />
+      <workItem from="1683457145139" duration="6638000" />
+      <workItem from="1683494651626" duration="2865000" />
+      <workItem from="1683805209918" duration="3567000" />
+      <workItem from="1683835552779" duration="6748000" />
+      <workItem from="1684071739292" duration="682000" />
+      <workItem from="1684196375599" duration="2033000" />
+      <workItem from="1684797051264" duration="3768000" />
+      <workItem from="1684923278806" duration="1398000" />
+      <workItem from="1685324230138" duration="644000" />
+      <workItem from="1685373753265" duration="1073000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Vepr_bot$keyboards.coverage" NAME="keyboards Coverage Results" MODIFIED="1681077165429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/config" />
+    <SUITE FILE_PATH="coverage/Vepr_bot$aio_dp_test.coverage" NAME="aio_dp_test Coverage Results" MODIFIED="1679935050596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Vepr_bot$aiogram_dialog.coverage" NAME="test_aio_dialog Coverage Results" MODIFIED="1679593434370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Vepr_bot$generate_model.coverage" NAME="generate_model Coverage Results" MODIFIED="1680182752857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Vepr_bot$API.coverage" NAME="API Coverage Results" MODIFIED="1677100371469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/Vepr_bot$main.coverage" NAME="main Coverage Results" MODIFIED="1677844957398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Vepr_bot$test_aio_dialog.coverage" NAME="test_aio_dialog Coverage Results" MODIFIED="1681560724830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Vepr_bot$start.coverage" NAME="start Coverage Results" MODIFIED="1680776564811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/handlers" />
+    <SUITE FILE_PATH="coverage/Vepr_bot$test.coverage" NAME="test Coverage Results" MODIFIED="1683414410455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Vepr_bot$app.coverage" NAME="app Coverage Results" MODIFIED="1685374263389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Vepr_bot$addresses.coverage" NAME="addresses Coverage Results" MODIFIED="1678363460693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/Vepr_bot$catalog.coverage" NAME="catalog Coverage Results" MODIFIED="1683415178916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/handlers/users" />
+  </component>
+</project>
