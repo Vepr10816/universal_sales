@@ -1,0 +1,46 @@
+#Указание версии docker-compose
+version: "1"
+#Создание сервисов, которые необходимо развернуть
+services:
+  #Создание сервиса базы данных postgres:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  #Создание сервиса для запуска API vepr_backend
+  vepr_backend:
+    build: ./vepr_backend
+    ports:
+      - 6200:6200
+    environment:
+      DB_USERNAME: postgres
+      DB_PASSWORD: 1
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: postgres
+      PORT: 6200
+    depends_on:
+      - postgres
+  #Создание сервиса для запуска telegram-бота vepr-bot
+  vepr-bot:
+    depends_on:
+      - vepr_backend
+    build: ./vepr-bot
+    restart: always
+  #Создание сервиса для запуска WEB-сайта vepr-site
+  vepr-site:
+    build: ./vepr-site
+    ports:
+      - 6300:80
+    environment:
+      ASPNETCORE_URLS: http://+:80
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
+    depends_on:
+      - vepr-bot
+volumes:
+  postgres_data:
