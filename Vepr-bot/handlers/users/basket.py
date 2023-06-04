@@ -26,7 +26,7 @@ async def form_menu_basket(callback_query: types.CallbackQuery, state: FSMContex
         if callback_query.data == "Детальный просмотр":
             for product in data["Basket"]:
                 message_from_user = await st.get_product(product["Product"], callback_query, data, 1)
-                keyboard = keyboards.generate_keyboard_from_basket_product(data, callback_query, product)
+                keyboard = keyboards.generate_keyboard_from_basket_product(data, product)
                 await callback_query.message.answer(message_from_user, parse_mode="Markdown", reply_markup=keyboard)
                 await StateUsers.detail_basket_menu.set()
         elif callback_query.data == "Очистить корзину":
@@ -41,14 +41,14 @@ async def form_menu_basket(callback_query: types.CallbackQuery, state: FSMContex
             try:
                 message_from_user = await st.get_product(data["Basket"][int(callback_query.data)]["Product"],
                                                          callback_query, data, 1)
-                keyboard = keyboards.generate_keyboard_from_basket_product(data, callback_query,
+                keyboard = keyboards.generate_keyboard_from_basket_product(data,
                                                                            data["Basket"][int(callback_query.data)])
                 await callback_query.message.answer(message_from_user, parse_mode="Markdown", reply_markup=keyboard)
                 await StateUsers.detail_basket_menu.set()
             except Exception as err:
                 await callback_query.message.answer("Ошибка. повторите попытку")
                 print(err)
-                StateUsers.main_menu.set()
+                await StateUsers.main_menu.set()
                 return
 
 
@@ -106,7 +106,7 @@ async def form_menu_detail_basket(callback_query: types.CallbackQuery, state: FS
             await bot.edit_message_reply_markup(
                 callback_query.message.chat.id,
                 callback_query.message.message_id,
-                reply_markup=keyboards.generate_keyboard_from_basket_product(data, callback_query,
+                reply_markup=keyboards.generate_keyboard_from_basket_product(data,
                                                                              data["Basket"][int(callback[1])])
             )
         elif callback_query.data != "None":
