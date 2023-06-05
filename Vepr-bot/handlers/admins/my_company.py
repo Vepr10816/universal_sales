@@ -190,11 +190,12 @@ async def load_img(message: types.Message, state: FSMContext):
     data = await state.get_data()
     data["Company"].url_logo = message.photo[0].file_id
     main_dir = str(pathlib.Path(app.dir_path).parents[0])
-    if len(main_dir) > 3:
-        valid.check_folders(main_dir)
-        await message.photo[-1].download(
-            destination_file=str(pathlib.Path(main_dir, 'Vepr-site', 'Vepr-site', 'wwwroot','images', f'{data["Company"].url_logo}.jpg')))
-        data["Company"].logo_name = f'{data["Company"].id}.jpg'
+    image_path = str(pathlib.Path(main_dir, 'Vepr-site', 'Vepr-site', 'wwwroot','images'))
+    if not os.path.exists(image_path):
+        os.makedirs(image_path)
+    await message.photo[-1].download(
+        destination_file=str(pathlib.Path(main_dir, 'Vepr-site', 'Vepr-site', 'wwwroot','images', f'{data["Company"].url_logo}.jpg')))
+    data["Company"].logo_name = f'{data["Company"].id}.jpg'
     await message.answer(await api.put(f'{const.company}/1', data["Company"], message.from_user.id))
     await state.finish()
     await command_company(message, state)

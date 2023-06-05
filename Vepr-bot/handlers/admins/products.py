@@ -1,3 +1,4 @@
+import os
 import pathlib
 
 from aiogram import types
@@ -168,11 +169,12 @@ async def load_img(message: types.Message, state: FSMContext):
     data["Productphotos"].product = data["Product"].id
     await state.update_data(data)
     main_dir = str(pathlib.Path(app.dir_path).parents[0])
-    if len(main_dir) > 3:
-        valid.check_folders(main_dir)
-        await message.photo[-1].download(
-            destination_file=str(pathlib.Path(main_dir, 'Vepr-site', 'Vepr-site', 'wwwroot','images', f'{message.photo[-1].file_id}.jpg')))
-        data["Productphotos"].photo_name = f'{message.photo[-1].file_id}.jpg'
+    image_path = str(pathlib.Path(main_dir, 'Vepr-site', 'Vepr-site', 'wwwroot','images'))
+    if not os.path.exists(image_path):
+        os.makedirs(image_path)
+    await message.photo[-1].download(
+        destination_file=str(pathlib.Path(main_dir, 'Vepr-site', 'Vepr-site', 'wwwroot','images', f'{message.photo[-1].file_id}.jpg')))
+    data["Productphotos"].photo_name = f'{message.photo[-1].file_id}.jpg'
     if await state.get_state() == 'StateProduct:add_product_photo':
         await message.answer(await api.post(const.photo, data["Productphotos"], message.from_user.id))
         data = await st.update_data(
